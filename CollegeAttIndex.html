@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h3>Mude a cor da página</h3>
+    
+    <button onclick="mudarCor('lightblue')">Azul</button>
+    <button onclick="mudarCor('lightgreen')">Verde</button>
+    <button onclick="mudarCor('lightcoral')">Vermelho</button>
+    <button onclick="mudarCor('white')">Padrão</button>
+    <button onclick="mudarCor('black')">Preto</button>
+    <br><br>
+
+    <input type="text" id="inputCor" placeholder="Digite o código da cor (ex: #222222)">
+    <button onclick="aplicarCorInput()">Aplicar Cor do Input</button>
+
+    <p id="corAtual">Cor atual: white</p>
+    <p id="ultimaAcao">Último clique: ainda não clicou</p>
+
+    <script>
+      function mudarCor(cor) {
+        document.body.style.backgroundColor = cor;
+        document.getElementById('corAtual').textContent = 'Cor atual: ' + cor;
+        atualizarHora();
+      }
+
+      function aplicarCorInput() {
+        let corInput = document.getElementById('inputCor').value;
+        if (corInput) {
+          document.body.style.backgroundColor = corInput;
+          document.getElementById('corAtual').textContent = 'Cor atual: ' + corInput;
+          atualizarHora();
+        } else {
+          alert('Digite uma cor válida!');
+        }
+      }
+
+      function atualizarHora() {
+        let agora = new Date();
+        document.getElementById('ultimaAcao').textContent = 
+          'Último clique: ' + agora.toLocaleString();
+      }
+    </script>
+  </body>
+</html>

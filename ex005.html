@@ -22,7 +22,7 @@
     <div id="idteste">Clique em mim</div>
     <div name="nome">Franklyn Santos</div>
     <script>
-        // MARCA
+        // MARCA == TAG
         let corpo = window.document.body
         let paragrafo = window.document.
         getElementsByTagName('p')[0]
@@ -34,13 +34,20 @@
         d.style.background = 'black'
         d.innerText = 'Troquei o que tá escrito'
     */
-
+    
+    /*
         // Name
 
         let d = window.document.getElementsByName('nome')
         d.style.background = 'black'
         d.innerText = 'David'
+    */
 
+        // Selector
+
+        let d = window.document.querySelector('div#idteste')
+        d.style.color = 'blue'
+        d.style.background = 'black'
 
 
     </script>

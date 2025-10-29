@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+    <style>
+        body {
+            background-color: darkgray;
+            font: normal 14pt Arial;
+        }
+
+        input {
+            background-color: rgb(209, 209, 209);
+            font: normal 10pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do carro:
+    <input type="number" id="txtvel"> Km/h.
+    <input type="button" value="Confirmar" onclick="multar()">
+    <div id="res">
+        
+    </div>
+    <div id="text" style="font: normal 10pt Arial; ">
+
+    </div>
+    <script>
+        
+        function multar() {
+            let txtvel = window.document.querySelector('input#txtvel');
+            let res = window.document.querySelector('div#res');
+            let text = window.document.querySelector('div#text')
+            let vel = Number(textvel.value);
+            if (vel > 60) { 
+                res.innerHTML = '<strong>Multado!</strong>';
+            } else {
+                res.innerHTML = '<strong>Liberado!</strong>';
+            }
+            text.innerHTML = `<p>Sua velocidade atual é de </p> ${vel} Km/h`
+            text.innerHTML += `<p>Dirija com cuidado!</p>`
+        }
+    </script>
+</body>
+</html>

@@ -1,16 +1,12 @@
-function converter() {
-    let distancia = Number(prompt('Digite uma distância em metros(m)'))
-
-    let h = window.document.getElementById('text')
-    h.innerHTML = `A distância de ${distancia} metros, corresponde a...`
+function calcular() {
+    let produto = prompt('Que produto você está comprando?')
+    let preco = Number(prompt(`Quanto custa ${produto} que você está comprando?`))
+    //preco = preco.toLocaleString('pt-BR')
+    let valor = Number(prompt(`Qual foi o valor que você deu para pagar ${produto}`))
     
-    let medidas = document.querySelector('div#medidas')
-
-    medidas.innerHTML = `<p>${(distancia / 1000).toLocaleString('pt-BR')} quilômetros (Km)</p>
-    <p>${(distancia / 100).toLocaleString('pt-BR')} hectômetros (Hm)</p>
-    <p>${(distancia / 10).toLocaleString('pt-BR')} decâmetros (Dam)</p>
-    <p>${(distancia * 10).toLocaleString('pt-BR')} decímetros (dm)</p>
-    <p>${(distancia * 100).toLocaleString('pt-BR')} centímetros (cm)</p>
-    <p>${(distancia * 1000).toLocaleString('pt-BR')} milímetros (mm)</p>`
-    
+    let troco = valor - preco
+    alert(`Você comprou ${produto} que custou R$ ${preco.toLocaleString('pt-BR')}.
+    \n
+    Deu R$ ${valor.toLocaleString('pt-BR')} em dinheiro e vai receber R$ ${troco.toLocaleString('pt-BR')} de troco.\n
+    Volte Sempre!`)
 }
